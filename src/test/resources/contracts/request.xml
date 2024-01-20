@@ -1,0 +1,29 @@
+<Request>
+    <Authentication>
+        <Channel>API</Channel>
+        <Username>impdistributor</Username>
+        <Password>FFRyEGGmMJYHA</Password>
+        <Currency>ZAR</Currency>
+    </Authentication>
+    <RequestParameters>
+        <Insureds>
+            <Insured ID="1">
+                <DOB>1983-09-25</DOB>
+                <Gender>male</Gender>
+                <Residency>ZA</Residency>
+                <TravelInformation>
+                    <TravelItemValue>1000.0</TravelItemValue>
+                </TravelInformation>
+            </Insured>
+        </Insureds>
+        <TravelInformation>
+            <StartDate>2024-01-19</StartDate>
+            <EndDate>2024-01-30</EndDate>
+            <BookingValue>1000.0</BookingValue>
+            <DepartureCountry>ZA</DepartureCountry>
+            <CoverCountries>
+                <CoverCountry>ZA</CoverCountry>
+            </CoverCountries>
+        </TravelInformation>
+    </RequestParameters>
+</Request>
