@@ -1,5 +1,6 @@
 package com.kmsolutions.travelinsurance.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.kmsolutions.travelinsurance.utils.DateAdapter;
 import jakarta.xml.bind.annotation.*;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
@@ -15,7 +16,9 @@ import org.joda.time.DateTime;
 @AllArgsConstructor
 public class Insured {
         @XmlAttribute(name = "ID") private Long id;
-        @XmlElement(name = "DOB") @XmlJavaTypeAdapter(DateAdapter.class)
+        @XmlElement(name = "DOB")
+        @XmlJavaTypeAdapter(DateAdapter.class)
+        @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
         private DateTime dateOfBirth;
         @XmlElement(name = "Gender") private String gender;
         @XmlElement(name = "Residency") private String residency;

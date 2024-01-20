@@ -1,0 +1,26 @@
+{
+  "requestParameters": {
+    "insureds": {
+      "insured": [
+        {
+          "id": 1,
+          "dateOfBirth": "1983-09-25",
+          "gender": "male",
+          "residency": "ZA",
+          "travelInformation": {
+            "travelItemValue": 1000
+          }
+        }
+      ]
+    } ,
+    "travelInformation": {
+      "startDate": "2024-01-19",
+      "endDate": "2024-01-30",
+      "bookingValue": 1000,
+      "departureCountry": "ZA",
+      "destinationCountry": {
+        "destinationCountry": "ZA"
+      }
+    }
+  }
+}

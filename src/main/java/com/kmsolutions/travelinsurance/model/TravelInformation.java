@@ -1,5 +1,6 @@
 package com.kmsolutions.travelinsurance.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.kmsolutions.travelinsurance.utils.DateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -17,9 +18,13 @@ import org.joda.time.DateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 public class TravelInformation{
-        @XmlElement(name = "StartDate") @XmlJavaTypeAdapter(DateAdapter.class)
+        @XmlElement(name = "StartDate")
+        @XmlJavaTypeAdapter(DateAdapter.class)
+        @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
         DateTime startDate;
-        @XmlElement(name = "EndDate") @XmlJavaTypeAdapter(DateAdapter.class)
+        @XmlElement(name = "EndDate")
+        @XmlJavaTypeAdapter(DateAdapter.class)
+        @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
         DateTime endDate;
         @XmlElement(name = "BookingValue") Double bookingValue;
         @XmlElement(name = "DepartureCountry") String departureCountry;

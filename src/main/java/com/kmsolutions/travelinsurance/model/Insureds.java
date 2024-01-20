@@ -16,5 +16,5 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Insureds {
-    @XmlElement(name = "Insured") List<Insured> insureds;
+    @XmlElement(name = "Insured") List<Insured> insured;
 }

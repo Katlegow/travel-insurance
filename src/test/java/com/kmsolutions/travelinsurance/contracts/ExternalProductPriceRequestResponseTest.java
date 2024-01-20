@@ -19,7 +19,7 @@ import java.util.List;
 import static org.assertj.core.api.Assertions.assertThat;
 
 
-public class ProductPriceRequestResponseTest {
+public class ExternalProductPriceRequestResponseTest {
     ProductPriceRequest productPriceRequest;
     JAXBContext context;
 
@@ -65,7 +65,7 @@ public class ProductPriceRequestResponseTest {
     void productPriceRequestDeserializationTest() throws JAXBException, IOException {
         ProductPriceRequest expected = (ProductPriceRequest) context
                 .createUnmarshaller()
-                        .unmarshal(new ClassPathResource("/contracts/request.xml").getInputStream());
+                        .unmarshal(new ClassPathResource("/com/kmsolutions/travelinsurance/contracts/request.xml").getInputStream());
 
         assertThat(productPriceRequest).isEqualTo(expected);
     }
@@ -75,13 +75,13 @@ public class ProductPriceRequestResponseTest {
         Marshaller mar = context.createMarshaller();
         mar.setProperty(Marshaller.JAXB_FRAGMENT, Boolean.TRUE);
         mar.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
-        File file = new File("./src/test/resources/contracts/outDir/request.xml");
+        File file = new File("./src/test/resources/com/kmsolutions/travelinsurance/contracts/outDir/request.xml");
 
         try (FileWriter writer = new XmlWriter(file)){
             mar.marshal(productPriceRequest, writer);
         }
 
-        long actual = Files.mismatch(Path.of(new ClassPathResource("/contracts/request.xml").getURI()), file.toPath());
+        long actual = Files.mismatch(Path.of(new ClassPathResource("/com/kmsolutions/travelinsurance/contracts/request.xml").getURI()), file.toPath());
         assertThat(actual).isEqualTo(-1L);
 
         file.delete();

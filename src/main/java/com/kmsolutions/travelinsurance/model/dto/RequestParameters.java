@@ -1,5 +1,6 @@
 package com.kmsolutions.travelinsurance.model.dto;
 
+import com.fasterxml.jackson.annotation.JsonRootName;
 import com.kmsolutions.travelinsurance.model.Insured;
 import com.kmsolutions.travelinsurance.model.Insureds;
 import com.kmsolutions.travelinsurance.model.TravelInformation;
