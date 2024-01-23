@@ -1,18 +1,8 @@
 package com.kmsolutions.travelinsurance.external;
 
-import com.kmsolutions.travelinsurance.properties.IntegrationProperties;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
-import org.springframework.web.client.RestTemplate;
+import com.kmsolutions.travelinsurance.model.dto.RequestParameters;
+import com.kmsolutions.travelinsurance.model.dto.response.Response;
 
-@Component
-public class HepstarClient {
-    private final IntegrationProperties properties;
-    private final RestTemplate restTemplate;
-
-    @Autowired
-    public HepstarClient(IntegrationProperties properties, RestTemplate restTemplate) {
-        this.properties = properties;
-        this.restTemplate = restTemplate;
-    }
+public interface HepstarClient {
+    Response getProductPrice(RequestParameters requestParameters);
 }
