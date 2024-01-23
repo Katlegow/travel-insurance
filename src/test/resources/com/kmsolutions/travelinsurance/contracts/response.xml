@@ -1,0 +1,44 @@
+<Response>
+    <Status>
+        <Code>200</Code>
+        <Description>Successful</Description>
+    </Status>
+    <ResponseParameters>
+        <PackageSize count="1">
+            <Package ID="1">
+                <PricedProduct>
+                    <ProductInformation>
+                        <ProductCode>TestAIR</ProductCode>
+                        <ProductIdentifier>AirHelp+</ProductIdentifier>
+                        <Category>ancillary</Category>
+                        <ProductMedia>
+                            <TermsAndConditions>http://assets.hepstar.com/documents/AirHelp_Terms_and_Conditions.pdf</TermsAndConditions>
+                        </ProductMedia>
+                    </ProductInformation>
+                    <CustomerPriceBreakdowns>
+                        <CustomerPriceBreakdown Currency="EUR" Type="Original">
+                            <BaseAmount>7.0</BaseAmount>
+                            <TotalAmount>7.0</TotalAmount>
+                        </CustomerPriceBreakdown>
+                        <CustomerPriceBreakdown Currency="ZAR" Type="ConvertedCurrency">
+                            <ExchangeRate>22.47462828</ExchangeRate>
+                            <BaseAmount>157.33</BaseAmount>
+                            <TotalAmount>157.33</TotalAmount>
+                        </CustomerPriceBreakdown>
+                    </CustomerPriceBreakdowns>
+                    <ProductPriceBreakdown>
+                        <PriceDetail Currency="EUR" Type="Original">
+                            <BaseAmount>7.0</BaseAmount>
+                            <TotalAmount>7.0</TotalAmount>
+                        </PriceDetail>
+                        <PriceDetail Currency="ZAR" Type="ConvertedCurrency">
+                            <ExchangeRate>22.47462828</ExchangeRate>
+                            <BaseAmount>157.33</BaseAmount>
+                            <TotalAmount>157.33</TotalAmount>
+                        </PriceDetail>
+                    </ProductPriceBreakdown>
+                </PricedProduct>
+            </Package>
+        </PackageSize>
+    </ResponseParameters>
+</Response>

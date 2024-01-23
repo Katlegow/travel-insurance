@@ -4,7 +4,10 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.kmsolutions.travelinsurance.TestConfigurations;
 import com.kmsolutions.travelinsurance.model.*;
 import com.kmsolutions.travelinsurance.model.dto.InternalProductPriceRequest;
+import com.kmsolutions.travelinsurance.model.dto.InternalProductPriceResponse;
 import com.kmsolutions.travelinsurance.model.dto.RequestParameters;
+import com.kmsolutions.travelinsurance.model.dto.response.*;
+import com.kmsolutions.travelinsurance.model.dto.response.Package;
 import org.joda.time.DateTime;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +16,7 @@ import org.springframework.boot.test.json.JacksonTester;
 import org.springframework.context.annotation.Import;
 
 import java.io.IOException;
+import java.net.URL;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -22,6 +26,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class InternalProductPriceJsonTest {
     @Autowired
     JacksonTester<InternalProductPriceRequest> productPriceRequestJson;
+    @Autowired
+    JacksonTester<InternalProductPriceResponse> productPriceResponseJson;
     @Autowired
     ObjectMapper objectMapper;
 
@@ -50,6 +56,75 @@ public class InternalProductPriceJsonTest {
 
         assertThat(productPriceRequestJson.write(new InternalProductPriceRequest(requestParameters)))
                 .isStrictlyEqualToJson("expected.json");
+    }
+
+    @Test
+    void productPriceResponseSerializationTest() throws IOException {
+        Response productResponse = new Response(
+                new Status(
+                        200,
+                        "Successful"
+                ),
+                new ResponseParameters(
+                        new PackageSize(
+                                1,
+                                List.of(new Package(
+                                                1,
+                                                new PricedProduct(
+                                                        new ProductInformation(
+                                                                "TestAIR",
+                                                                "AirHelp+",
+                                                                "ancillary",
+                                                                new ProductMedia(new URL("http://assets.hepstar.com/documents/AirHelp_Terms_and_Conditions.pdf"))
+                                                        ),
+                                                        new CustomerPriceBreakdowns(
+                                                                List.of(
+                                                                        new CustomerPriceBreakdown(
+                                                                                "EUR",
+                                                                                "Original",
+                                                                                null,
+                                                                                7.00,
+                                                                                7.00
+                                                                        ),
+                                                                        new CustomerPriceBreakdown(
+                                                                                "ZAR",
+                                                                                "ConvertedCurrency",
+                                                                                22.47462828,
+                                                                                157.33,
+                                                                                157.33
+                                                                        )
+                                                                )
+                                                        ),
+                                                        new ProductPriceBreakdown(
+                                                                List.of(
+                                                                        new PriceDetail(
+                                                                                "EUR",
+                                                                                "Original",
+                                                                                null,
+                                                                                7.00,
+                                                                                7.00
+                                                                        ),
+                                                                        new PriceDetail(
+                                                                                "ZAR",
+                                                                                "ConvertedCurrency",
+                                                                                22.47462828,
+                                                                                157.33,
+                                                                                157.33
+                                                                        )
+                                                                )
+                                                        )
+                                                )
+                                        )
+                                )
+                        ),
+                        null
+                )
+        );
+
+        System.out.println(objectMapper.writeValueAsString(new InternalProductPriceResponse(productResponse)));
+
+        assertThat(productPriceResponseJson.write(new InternalProductPriceResponse(productResponse)))
+                .isStrictlyEqualToJson("expectedResponse.json");
     }
 
     @Test

@@ -1,0 +1,65 @@
+{
+  "response": {
+    "status": {
+      "code": 200,
+      "description": "Successful"
+    },
+    "responseParameters": {
+      "packageSize": {
+        "count": 1,
+        "packages": [
+          {
+            "id": 1,
+            "pricedProduct": {
+              "productInformation": {
+                "productCode": "TestAIR",
+                "productIdentifier": "AirHelp+",
+                "category": "ancillary",
+                "productMedia": {
+                  "termsAndConditions": "http://assets.hepstar.com/documents/AirHelp_Terms_and_Conditions.pdf"
+                }
+              },
+              "customerPriceBreakdowns": {
+                "customerPriceBreakdown": [
+                  {
+                    "currency": "EUR",
+                    "type": "Original",
+                    "exchangeRate": null,
+                    "baseAmount": 7.0,
+                    "totalAmount": 7.0
+                  },
+                  {
+                    "currency": "ZAR",
+                    "type": "ConvertedCurrency",
+                    "exchangeRate": 22.47462828,
+                    "baseAmount": 157.33,
+                    "totalAmount": 157.33
+                  }
+                ]
+              },
+              "productPriceBreakdown": {
+                "priceDetail": [
+                  {
+                    "currency": "EUR",
+                    "type": "Original",
+                    "exchangeRate": null,
+                    "baseAmount": 7.0,
+                    "totalAmount": 7.0
+                  },
+                  {
+                    "currency": "ZAR",
+                    "type": "ConvertedCurrency",
+                    "exchangeRate": 22.47462828,
+                    "baseAmount": 157.33,
+                    "totalAmount": 157.33
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "bookingFees": null
+    }
+  }
+}
