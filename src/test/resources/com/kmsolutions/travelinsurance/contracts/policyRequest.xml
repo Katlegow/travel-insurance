@@ -1,0 +1,51 @@
+<Request>
+    <Authentication>
+        <Channel>API</Channel>
+        <Username>impdistributor</Username>
+        <Password>FFRyEGGmMJYHA</Password>
+        <Currency>ZAR</Currency>
+    </Authentication>
+    <RequestParameters>
+        <PolicyRequests>
+            <PolicyRequest>
+                <DistributerReference>AirHelp+</DistributerReference>
+                <ProductID>TestAIR</ProductID>
+                <DisplayPrice Currency="ZAR">155.56</DisplayPrice>
+                <Insureds>
+                    <Insured ID="1">
+                        <Firstname>Insured First Name</Firstname>
+                        <Surname>Insured Surname</Surname>
+                        <NationalID>1111111111122</NationalID>
+                        <DOB>1983-09-25</DOB>
+                        <Gender>male</Gender>
+                        <Residency>ZA</Residency>
+                        <TravelInformation>
+                            <TravelItemValue>1000.0</TravelItemValue>
+                        </TravelInformation>
+                        <DisplayPrice Currency="ZAR">155.56</DisplayPrice>
+                    </Insured>
+                </Insureds>
+                <ContactInformation>
+                    <Email>example@gmail.com</Email>
+                </ContactInformation>
+                <TravelInformation>
+                    <StartDate>2024-01-19</StartDate>
+                    <EndDate>2024-01-30</EndDate>
+                    <BookingValue>1000.0</BookingValue>
+                    <DepartureCountry>ZA</DepartureCountry>
+                    <CoverCountries>
+                        <CoverCountry>ZA</CoverCountry>
+                    </CoverCountries>
+                </TravelInformation>
+            </PolicyRequest>
+        </PolicyRequests>
+        <Payment>
+            <CardType>Visa</CardType>
+            <CardHolder>Cardholder</CardHolder>
+            <CardNumber>4242424242424242</CardNumber>
+            <CardVerificationCode>123</CardVerificationCode>
+            <ExpireMonth>04</ExpireMonth>
+            <ExpireYear>2025</ExpireYear>
+        </Payment>
+    </RequestParameters>
+</Request>

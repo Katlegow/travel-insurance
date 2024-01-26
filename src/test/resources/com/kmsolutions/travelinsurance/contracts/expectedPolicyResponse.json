@@ -1,0 +1,31 @@
+{
+  "response": {
+    "status": {
+      "code": 200,
+      "description": "Successful"
+    },
+    "responseParameters": {
+      "paymentResult": {
+        "amount": 700.0,
+        "currency": "EUR"
+      },
+      "purchaseResponses": {
+        "purchaseResponse": [
+          {
+            "purchaseInformation": {
+              "purchaseDate": "2024-01-24",
+              "purchaseNumber": "AIR-20240124-58058",
+              "termsAndConditions": "http://assets.hepstar.com/documents/AirHelp_Terms_and_Conditions.pdf",
+              "documents": {
+                "documentsDownload": "https://uat.gateway.insure/policy/schedule/download/1924d47fb2f0489a8f3d78e76ff68018"
+              }
+            }
+          }
+        ]
+      },
+      "purchasesInformation": {
+        "masterPurchaseNumber": "HSM2024012421095795746"
+      }
+    }
+  }
+}

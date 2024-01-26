@@ -1,0 +1,27 @@
+<Response>
+    <Status>
+        <Code>200</Code>
+        <Description>Successful</Description>
+    </Status>
+    <ResponseParameters>
+        <PaymentResult>
+            <Amount>700.0</Amount>
+            <Currency>EUR</Currency>
+        </PaymentResult>
+        <PurchaseResponses>
+            <PurchaseResponse>
+                <PurchaseInformation>
+                    <PurchaseDate>2024-01-24</PurchaseDate>
+                    <PurchaseNumber>AIR-20240124-58058</PurchaseNumber>
+                    <TermsAndConditions>http://assets.hepstar.com/documents/AirHelp_Terms_and_Conditions.pdf</TermsAndConditions>
+                    <Documents>
+                        <DocumentsDownload>https://uat.gateway.insure/policy/schedule/download/1924d47fb2f0489a8f3d78e76ff68018</DocumentsDownload>
+                    </Documents>
+                </PurchaseInformation>
+            </PurchaseResponse>
+        </PurchaseResponses>
+        <PurchasesInformation>
+            <MasterPurchaseNumber>HSM2024012421095795746</MasterPurchaseNumber>
+        </PurchasesInformation>
+    </ResponseParameters>
+</Response>
