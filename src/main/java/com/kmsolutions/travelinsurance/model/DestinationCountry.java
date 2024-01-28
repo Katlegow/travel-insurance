@@ -8,11 +8,13 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.io.Serializable;
+
 @Data
 @XmlRootElement(name = "CoverCountries")
 @XmlAccessorType(XmlAccessType.FIELD)
 @NoArgsConstructor
 @AllArgsConstructor
-public class DestinationCountry {
+public class DestinationCountry implements Serializable {
         @XmlElement(name = "CoverCountry") String destinationCountry;
 }

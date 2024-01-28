@@ -8,12 +8,14 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.io.Serializable;
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @XmlRootElement(name = "RequestParameters")
 @XmlAccessorType(XmlAccessType.FIELD)
-public class PolicyRequestParameters {
+public class PolicyRequestParameters implements Serializable {
     @XmlElement(name = "PolicyRequests") PolicyRequests policyRequests;
     @XmlElement(name = "Payment") Payment payment;
 }

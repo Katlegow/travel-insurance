@@ -12,12 +12,14 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.joda.time.DateTime;
 
+import java.io.Serializable;
+
 @Data
 @XmlRootElement(name = "TravelInformation")
 @XmlAccessorType(XmlAccessType.FIELD)
 @NoArgsConstructor
 @AllArgsConstructor
-public class TravelInformation{
+public class TravelInformation implements Serializable {
         @XmlElement(name = "StartDate")
         @XmlJavaTypeAdapter(DateAdapter.class)
         @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")

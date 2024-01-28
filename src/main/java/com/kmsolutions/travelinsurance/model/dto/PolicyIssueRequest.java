@@ -9,12 +9,14 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.io.Serializable;
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @XmlRootElement(name = "Request")
 @XmlAccessorType(XmlAccessType.FIELD)
-public class PolicyIssueRequest {
+public class PolicyIssueRequest implements Serializable {
     @XmlElement(name = "Authentication") Authentication authentication;
     @XmlElement(name = "RequestParameters") PolicyRequestParameters policyRequestParameters;
 }

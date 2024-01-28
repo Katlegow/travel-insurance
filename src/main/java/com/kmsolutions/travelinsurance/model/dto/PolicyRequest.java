@@ -1,6 +1,5 @@
 package com.kmsolutions.travelinsurance.model.dto;
 
-import com.kmsolutions.travelinsurance.model.Insureds;
 import com.kmsolutions.travelinsurance.model.PolicyInsureds;
 import com.kmsolutions.travelinsurance.model.TravelInformation;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -11,12 +10,14 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.io.Serializable;
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @XmlRootElement(name = "PolicyRequest")
 @XmlAccessorType(XmlAccessType.FIELD)
-public class PolicyRequest {
+public class PolicyRequest implements Serializable {
     @XmlElement(name = "DistributerReference") String distributerReference;
     @XmlElement(name = "ProductID") String productId;
     @XmlElement(name = "DisplayPrice") DisplayPrice displayPrice;

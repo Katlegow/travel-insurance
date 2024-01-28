@@ -8,6 +8,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.io.Serializable;
 import java.util.List;
 
 @Data
@@ -15,6 +16,6 @@ import java.util.List;
 @AllArgsConstructor
 @XmlRootElement(name = "PolicyRequests")
 @XmlAccessorType(XmlAccessType.FIELD)
-public class PolicyRequests {
+public class PolicyRequests implements Serializable {
     @XmlElement(name = "PolicyRequest") List<PolicyRequest> policyRequest;
 }

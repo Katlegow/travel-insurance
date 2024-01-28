@@ -8,11 +8,13 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.io.Serializable;
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @XmlRootElement(name = "ContactInformation")
 @XmlAccessorType(XmlAccessType.FIELD)
-public class ContactInformation {
+public class ContactInformation implements Serializable {
     @XmlElement(name = "Email") String email;
 }

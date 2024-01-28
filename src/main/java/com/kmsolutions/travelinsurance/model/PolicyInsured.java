@@ -7,16 +7,17 @@ import jakarta.xml.bind.annotation.*;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import org.joda.time.DateTime;
+
+import java.io.Serializable;
 
 @Data
 @XmlRootElement(name="Insured")
 @XmlAccessorType(XmlAccessType.FIELD)
 @NoArgsConstructor
 @AllArgsConstructor
-public class PolicyInsured {
+public class PolicyInsured implements Serializable {
     @XmlAttribute(name = "ID") private Long id;
     @XmlElement(name = "Firstname") private String firstName;
     @XmlElement(name = "Surname") private String surname;
