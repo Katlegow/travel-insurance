@@ -1,14 +1,14 @@
 <template>
   <main>
-		<h1>Get a Travel Insurance Quote</h1>
+		<h1 class="header">Get a Travel Insurance Quote</h1>
 		<p>
 			Need an affordable Travel Insurance? Don't worry, We got You! Please fill in the form below to how much you qualify for.
 		</p>
 		<div>
-			<form class="row g-3">
+			<form class="row g-3" @submit.prevent="onSubmit">
 				<div class="row g-3">
 					<h4>Travel Information</h4>
-					<p>Booking Value: {{ bookingValue  }}</p>
+					<p>Booking Value: <span class="amount">R{{ bookingValue  }}</span></p>
 					<div class="col-md-6">
 						<label for="startDate" class="form-label">Start Date</label>
 						<input 
@@ -50,7 +50,7 @@
 				<div class="row g-3">
 					<h4>Insureds Information</h4>
 					<button 
-						class="btn btn-primary col-auto mb-3" @click.prevent="addInsured">Add Insured</button>
+						class="btn btnColor col-auto mb-3" @click.prevent="addInsured">Add Insured</button>
 					<table class="table">
 						<thead>
 							<tr>
@@ -84,7 +84,7 @@
 					</table>
 				</div>
 				<div class="col-12">
-					<button type="submit" class="btn btn-primary">Sign in</button>
+					<button type="submit" class="btn btnColor float-end">Submit Details</button>
 				</div>
 			</form>
 		</div>
@@ -95,13 +95,18 @@
 import { computed, ref } from "vue";
 
 const currentDate = new Date().toISOString().slice(0,10);
+const emmiter = defineEmits(['submit']);
+
+//============================ Computed Fields =================================
 
 const bookingValue = computed( () => {
 	return insureds.value.reduce(
 		(total, insured) => total + parseInt(insured.travelInformation.travelItemValue),
 		0
 	);
-})
+});
+
+//============================= Data ===========================================
 
 const travelInfo = ref({
 	startDate: '',
@@ -111,7 +116,7 @@ const travelInfo = ref({
 	destinationCountry: {
 		destinationCountry: ''
 	}
-})
+});
 
 const insureds = ref(
 	[
@@ -124,11 +129,12 @@ const insureds = ref(
 				travelItemValue: 0
 			}
 		},
-
 	]
 );
 
-const addInsured = () => {
+//=============================== Functions ====================================
+
+function addInsured() {
 	insureds.value.push(
 		{
 			id: insureds.value.length + 1,
@@ -139,13 +145,52 @@ const addInsured = () => {
 				travelItemValue: 0
 			}
 		}
-	)
+	);
 }
 
+function onSubmit() {
+	emmiter(
+		'submit',
+		{
+			insureds: {
+				insured: insureds.value
+			},
+			travelInformation: travelInfo.value
+		}
+	);
+}
 </script>
 
 <style scoped>
-	h3{
-		color: black;
-	}
+.header{
+	color: rgb( 255, 87, 51 );
+}
+
+.btnColor {
+	background-color: rgb( 255, 87, 51 );
+	color: aliceblue;
+}
+
+.btnColor:hover {
+	border-color: rgb( 255, 87, 51 );
+	border-width: 2px;
+	border-style: solid;
+}
+
+label, th {
+	color: rgb( 255, 87, 51 );
+	font-weight: 600;
+}
+
+.form-control:focus, .form-select:focus {
+	border-color: rgb( 255, 87, 51 );
+	outline: 0;
+	box-shadow: 0 0 0 .25rem rgba(255, 87, 51 ,.25);
+}
+
+.amount {
+	color: rgb( 255, 87, 51 );
+	font-size: large;
+	font-weight: 700;
+}
 </style>
